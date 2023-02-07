@@ -1,6 +1,6 @@
 --All of the questions in this quiz refer to the open source Chinook Database. 
 
---1) Pull a list of customer ids with the customer’s full name, and address, along with combining their city and country together.
+--1) Pull a list of customer ids with the customerâ€™s full name, and address, along with combining their city and country together.
 -----Be sure to make a space in between these two and make it UPPER CASE.
 
 Select
@@ -13,19 +13,19 @@ From Customers
 +------------+-----------------------+--------------------------------------+----------------------------+
 | CustomerId | FullName              | Address                              | Location                   |
 +------------+-----------------------+--------------------------------------+----------------------------+
-|          1 | Luís Gonçalves        | Av. Brigadeiro Faria Lima, 2170      | SãO JOSé DOS CAMPOS BRAZIL |
-|          2 | Leonie Köhler         | Theodor-Heuss-Straße 34              | STUTTGART GERMANY          |
-|          3 | François Tremblay     | 1498 rue Bélanger                    | MONTRéAL CANADA            |
-|          4 | Bjørn Hansen          | Ullevålsveien 14                     | OSLO NORWAY                |
-|          5 | František Wichterlová | Klanova 9/506                        | PRAGUE CZECH REPUBLIC      |
-|          6 | Helena Holý           | Rilská 3174/6                        | PRAGUE CZECH REPUBLIC      |
-|          7 | Astrid Gruber         | Rotenturmstraße 4, 1010 Innere Stadt | VIENNE AUSTRIA             |
-|          8 | Daan Peeters          | Grétrystraat 63                      | BRUSSELS BELGIUM           |
-|          9 | Kara Nielsen          | Sønder Boulevard 51                  | COPENHAGEN DENMARK         |
-|         10 | Eduardo Martins       | Rua Dr. Falcão Filho, 155            | SãO PAULO BRAZIL           |
-|         11 | Alexandre Rocha       | Av. Paulista, 2022                   | SãO PAULO BRAZIL           |
-|         12 | Roberto Almeida       | Praça Pio X, 119                     | RIO DE JANEIRO BRAZIL      |
-|         13 | Fernanda Ramos        | Qe 7 Bloco G                         | BRASíLIA BRAZIL            |
+|          1 | LuÃ­s GonÃ§alves        | Av. Brigadeiro Faria Lima, 2170      | SÃ£O JOSÃ© DOS CAMPOS BRAZIL |
+|          2 | Leonie KÃ¶hler         | Theodor-Heuss-StraÃŸe 34              | STUTTGART GERMANY          |
+|          3 | FranÃ§ois Tremblay     | 1498 rue BÃ©langer                    | MONTRÃ©AL CANADA            |
+|          4 | BjÃ¸rn Hansen          | UllevÃ¥lsveien 14                     | OSLO NORWAY                |
+|          5 | FrantiÅ¡ek WichterlovÃ¡ | Klanova 9/506                        | PRAGUE CZECH REPUBLIC      |
+|          6 | Helena HolÃ½           | RilskÃ¡ 3174/6                        | PRAGUE CZECH REPUBLIC      |
+|          7 | Astrid Gruber         | RotenturmstraÃŸe 4, 1010 Innere Stadt | VIENNE AUSTRIA             |
+|          8 | Daan Peeters          | GrÃ©trystraat 63                      | BRUSSELS BELGIUM           |
+|          9 | Kara Nielsen          | SÃ¸nder Boulevard 51                  | COPENHAGEN DENMARK         |
+|         10 | Eduardo Martins       | Rua Dr. FalcÃ£o Filho, 155            | SÃ£O PAULO BRAZIL           |
+|         11 | Alexandre Rocha       | Av. Paulista, 2022                   | SÃ£O PAULO BRAZIL           |
+|         12 | Roberto Almeida       | PraÃ§a Pio X, 119                     | RIO DE JANEIRO BRAZIL      |
+|         13 | Fernanda Ramos        | Qe 7 Bloco G                         | BRASÃ­LIA BRAZIL            |
 |         14 | Mark Philips          | 8210 111 ST NW                       | EDMONTON CANADA            |
 |         15 | Jennifer Peterson     | 700 W Pender Street                  | VANCOUVER CANADA           |
 |         16 | Frank Harris          | 1600 Amphitheatre Parkway            | MOUNTAIN VIEW USA          |
@@ -42,8 +42,8 @@ From Customers
 (Output limit exceeded, 25 of 59 total rows shown)
 ------------------------------------------------------------------------------------------------------------------------------------
 
---2) Create a new employee user id by combining the first 4 letters of the employee’s first name with the first 2 letters of the 
------employee’s last name. Make the new field lower case and pull each individual step to show your work.
+--2) Create a new employee user id by combining the first 4 letters of the employeeâ€™s first name with the first 2 letters of the 
+-----employeeâ€™s last name. Make the new field lower case and pull each individual step to show your work.
 
 Select EmployeeId, FirstName, LastName,
        SUBSTR(FirstName,1,4) AS A,
@@ -93,9 +93,9 @@ Order by LastName ASC
 
 Select * 
 From Customers
-Where (Company, State) IS NULL
+Where (Company, State, Postalcode, Fax) IS NULL
 
---Answers: Company, State, PostalCode, Fax hav null values
+--Answers: Company, State, PostalCode, Fax have null values
 ----------------------------------------------------------------------------------------------------------------------------
 
 --5) Find the cities with the most customers and rank in descending order.
@@ -113,12 +113,12 @@ Order by Count(*) DESC
 | Mountain View |              2 |
 | Paris         |              2 |
 | Prague        |              2 |
-| São Paulo     |              2 |
+| SÃ£o Paulo     |              2 |
 | Amsterdam     |              1 |
 | Bangalore     |              1 |
 | Bordeaux      |              1 |
 | Boston        |              1 |
-| Brasília      |              1 |
+| BrasÃ­lia      |              1 |
 | Brussels      |              1 |
 | Budapest      |              1 |
 | Buenos Aires  |              1 |
@@ -137,7 +137,7 @@ Order by Count(*) DESC
 (Output limit exceeded, 25 of 53 total rows shown)
 ------------------------------------------------------------------------------------------------------------------
 
---6) Create a new customer invoice id by combining a customer’s invoice id with their first and last name while 
+--6) Create a new customer invoice id by combining a customerâ€™s invoice id with their first and last name while 
 -----ordering your query in the following order: firstname, lastname, and invoiceID. Select all of the correct 
 -----"AstridGruber" entries that are returned in your results below. 
 
@@ -171,10 +171,10 @@ Group by cu.FirstName, cu.LastName, inv.InvoiceId
 |          7 | Astrid    | Gruber   |       296 | AstridGruber296   |
 |          7 | Astrid    | Gruber   |       318 | AstridGruber318   |
 |          7 | Astrid    | Gruber   |       370 | AstridGruber370   |
-|          4 | Bjørn     | Hansen   |         2 | BjørnHansen2      |
-|          4 | Bjørn     | Hansen   |        24 | BjørnHansen24     |
-|          4 | Bjørn     | Hansen   |        76 | BjørnHansen76     |
-|          4 | Bjørn     | Hansen   |       197 | BjørnHansen197    |
+|          4 | BjÃ¸rn     | Hansen   |         2 | BjÃ¸rnHansen2      |
+|          4 | BjÃ¸rn     | Hansen   |        24 | BjÃ¸rnHansen24     |
+|          4 | BjÃ¸rn     | Hansen   |        76 | BjÃ¸rnHansen76     |
+|          4 | BjÃ¸rn     | Hansen   |       197 | BjÃ¸rnHansen197    |
 +------------+-----------+----------+-----------+-------------------+
 (Output limit exceeded, 25 of 412 total rows shown)
 ----------------------------------------------------------------------------------------------------------------------
